@@ -1,0 +1,73 @@
+{
+  "name": "vibecheck",
+  "displayName": "vibecheck",
+  "description": "ESLint for AI slop. 32 rules for catching AI-generated code smells in JS/TS and Python.",
+  "version": "0.1.0",
+  "publisher": "yuvrajangadsingh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuvrajangadsingh/vibecheck-vscode"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Linters"],
+  "keywords": [
+    "linter", "ai", "slop", "vibe-coding", "code-quality",
+    "ai-generated", "code-review", "javascript", "typescript",
+    "python", "code-smell", "static-analysis", "ai-slop"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:python"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vibecheck.runFile",
+        "title": "vibecheck: Run on Current File"
+      }
+    ],
+    "configuration": {
+      "title": "vibecheck",
+      "properties": {
+        "vibecheck.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable vibecheck diagnostics"
+        },
+        "vibecheck.runOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run vibecheck when a file is saved"
+        },
+        "vibecheck.severity": {
+          "type": "string",
+          "default": "info",
+          "enum": ["error", "warn", "info"],
+          "description": "Minimum severity to report"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "@vscode/vsce": "^3.0.0"
+  },
+  "dependencies": {
+    "@yuvrajangadsingh/vibecheck": "^1.4.0"
+  }
+}
