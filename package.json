@@ -59,7 +59,9 @@
   "scripts": {
     "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
     "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "prepackage": "npm run build",
     "package": "vsce package",
+    "prepublish": "npm run build",
     "publish": "vsce publish"
   },
   "devDependencies": {
