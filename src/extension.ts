@@ -48,18 +48,29 @@ function lintDocument(doc: vscode.TextDocument) {
   if (!SUPPORTED_LANGUAGES.has(doc.languageId)) return;
 
   const content = doc.getText();
+  if (!content.trim()) {
+    diagnostics.delete(doc.uri);
+    updateStatusBar(0);
+    return;
+  }
+
   const filePath = doc.uri.fsPath;
   const cfg = getConfig();
   const minSeverity = getMinSeverity();
 
-  const findings = scanContent(content, filePath, cfg);
+  let findings: Finding[];
+  try {
+    findings = scanContent(content, filePath, cfg);
+  } catch {
+    return; // don't crash on malformed files
+  }
 
   const filtered = findings.filter(
     (f) => SEVERITY_ORDER[f.severity] <= SEVERITY_ORDER[minSeverity]
   );
 
   const diags = filtered.map((f) => {
-    const line = Math.max(0, f.line - 1);
+    const line = Math.max(0, Math.min(f.line - 1, doc.lineCount - 1));
     const col = Math.max(0, f.column - 1);
     const lineText = doc.lineAt(line).text;
     const range = new vscode.Range(line, col, line, lineText.length);
