@@ -1,6 +1,6 @@
 # vibecheck for VS Code
 
-**ESLint for AI slop.** 32 rules for catching AI-generated code smells in JS/TS and Python, right in your editor.
+**ESLint for AI slop.** 34 rules for catching AI-generated code smells in JS/TS and Python, right in your editor.
 
 ## Features
 
@@ -35,6 +35,16 @@
 ## Commands
 
 - **vibecheck: Run on Current File** - manually trigger a scan
+
+## Cursor / Windsurf
+
+Works in Cursor and Windsurf out of the box via the VS Code Marketplace.
+
+If you're using a **non-default Cursor profile** and the extension installs but doesn't activate, this is a [known Cursor bug](https://forum.cursor.com/c/support/bug-report/6) where VSIX installs don't register in the active profile. Fix it by specifying the profile explicitly:
+
+```bash
+cursor --profile "YourProfileName" --install-extension yuvrajangadsingh.vibecheck-linter
+```
 
 ## Links
 
