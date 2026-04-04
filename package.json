@@ -4,7 +4,7 @@
   "description": "ESLint for AI slop. 34 rules for catching AI-generated code smells in JS/TS and Python.",
   "version": "0.2.0",
   "publisher": "yuvrajangadsingh",
-  "license": "MIT",
+  "license": "FSL-1.1-Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/yuvrajangadsingh/vibecheck-vscode"
