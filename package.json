@@ -1,8 +1,8 @@
 {
   "name": "vibecheck-linter",
   "displayName": "vibecheck linter",
-  "description": "ESLint for AI slop. 34 rules for catching AI-generated code smells in JS/TS and Python.",
-  "version": "0.2.0",
+  "description": "ESLint for AI slop. 39 rules for catching AI-generated code smells in JS/TS and Python.",
+  "version": "0.3.0",
   "publisher": "yuvrajangadsingh",
   "license": "FSL-1.1-Apache-2.0",
   "repository": {
@@ -13,11 +13,23 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Linters"],
+  "categories": [
+    "Linters"
+  ],
   "keywords": [
-    "linter", "ai", "slop", "vibe-coding", "code-quality",
-    "ai-generated", "code-review", "javascript", "typescript",
-    "python", "code-smell", "static-analysis", "ai-slop"
+    "linter",
+    "ai",
+    "slop",
+    "vibe-coding",
+    "code-quality",
+    "ai-generated",
+    "code-review",
+    "javascript",
+    "typescript",
+    "python",
+    "code-smell",
+    "static-analysis",
+    "ai-slop"
   ],
   "activationEvents": [
     "onLanguage:javascript",
@@ -50,7 +62,11 @@
         "vibecheck.severity": {
           "type": "string",
           "default": "info",
-          "enum": ["error", "warn", "info"],
+          "enum": [
+            "error",
+            "warn",
+            "info"
+          ],
           "description": "Minimum severity to report"
         }
       }
@@ -70,6 +86,6 @@
     "@vscode/vsce": "^3.0.0"
   },
   "dependencies": {
-    "@yuvrajangadsingh/vibecheck": "^1.4.0"
+    "@yuvrajangadsingh/vibecheck": "^1.14.0"
   }
 }
