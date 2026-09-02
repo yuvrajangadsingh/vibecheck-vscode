@@ -1,7 +1,7 @@
 {
   "name": "vibecheck-linter",
   "displayName": "vibecheck linter",
-  "description": "ESLint for AI slop. 39 rules for catching AI-generated code smells in JS/TS and Python.",
+  "description": "ESLint for AI slop. 40 rules for catching AI-generated code smells in JS/TS and Python.",
   "version": "0.3.1",
   "publisher": "yuvrajangadsingh",
   "license": "FSL-1.1-Apache-2.0",

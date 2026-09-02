@@ -1,6 +1,6 @@
 # vibecheck for VS Code
 
-**ESLint for AI slop.** 34 rules for catching AI-generated code smells in JS/TS and Python, right in your editor.
+**ESLint for AI slop.** 40 rules for catching AI-generated code smells in JS/TS and Python, right in your editor.
 
 ## Features
 
